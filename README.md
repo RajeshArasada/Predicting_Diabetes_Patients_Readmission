@@ -66,7 +66,7 @@ The following code is used to select only the first encounter of each patient
             
 ![Prevelance](/images/prevelance.png)    
 
-![Workflow](/images/workflow)
+![Workflow](/images/workflow.png)
 
 ## Numeric Data
 ### Normalization Techniques at a Glance
