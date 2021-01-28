@@ -140,7 +140,9 @@ The following code is used to select only the first encounter of each patient
 ![Model Performance on validation data](/images/confusion_matrix_thresh_50.png)
 
 ## Cumulative Gain Curve
+**If the healthcare provider's goal was to reach say 50% of the patients that are most likely to be readmitted then using the cumulative gain curve they can determine that roughly just about 40% of the most likely most likely patients would need to be used to achieve that.**
 ![Cumulative_Gain_Plot](/images/cumulative_gain.png)
+
 
 ## Precision-Recall Trade-Off
 ![Precision-Recall curve](/images/PR_curve.png)
