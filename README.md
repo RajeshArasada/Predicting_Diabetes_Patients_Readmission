@@ -23,7 +23,7 @@ Number of Class		  : 2
 Number of Instances	  : 100000
 Number of Attributes  : 55
 ```
-![Data Sample]({figures}/img/sample.png)
+![Data Sample](/images/sample.png)
 
 ## Demographic Information
 ![Demograhic_Info]({figures}/img/demographic_info.png)
