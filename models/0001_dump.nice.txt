@@ -1,0 +1,200 @@
+booster[0]:
+0:[zstd_time_in_hospital<-1.11680603] yes=1,no=2,missing=1
+	1:[grouped_diag_2_25<0.00141812116] yes=3,no=4,missing=3
+		3:leaf=-1.29181361
+		4:leaf=-0.756567419
+	2:[zstd_time_in_hospital<-0.77686429] yes=5,no=6,missing=5
+		5:leaf=1.99816561
+		6:leaf=0.0329078399
+booster[1]:
+0:[race_Caucasian<9.35534335e-05] yes=1,no=2,missing=1
+	1:[zstd_time_in_hospital<-0.436512858] yes=3,no=4,missing=3
+		3:leaf=-1.01030767
+		4:leaf=-0.525936365
+	2:[race_Caucasian<0.999999642] yes=5,no=6,missing=5
+		5:leaf=1.99537706
+		6:leaf=-0.0392199345
+booster[2]:
+0:[age__70_80<7.28301893e-05] yes=1,no=2,missing=1
+	1:[age__80_90<0.000189840124] yes=3,no=4,missing=3
+		3:leaf=-0.337308973
+		4:leaf=0.287512273
+	2:[age__70_80<0.999961376] yes=5,no=6,missing=5
+		5:leaf=2.03007269
+		6:leaf=-0.110149577
+booster[3]:
+0:[age__60_70<2.9853074e-05] yes=1,no=2,missing=1
+	1:[gender_Male<0.99975884] yes=3,no=4,missing=3
+		3:leaf=0.0864575729
+		4:leaf=-0.414952755
+	2:[age__60_70<0.99991262] yes=5,no=6,missing=5
+		5:leaf=1.99462879
+		6:leaf=0.00209972495
+booster[4]:
+0:[gender_Male<1.2105168e-05] yes=1,no=2,missing=1
+	1:[grouped_diag_2_42<0.000439238822] yes=3,no=4,missing=3
+		3:leaf=-0.444849998
+		4:leaf=0.168227673
+	2:[gender_Male<0.999899387] yes=5,no=6,missing=5
+		5:leaf=1.94999576
+		6:leaf=-0.035248287
+booster[5]:
+0:[grouped_diag_2_42<0.999979973] yes=1,no=2,missing=1
+	1:[grouped_diag_2_42<4.26663937e-05] yes=3,no=4,missing=3
+		3:leaf=0.00441786973
+		4:leaf=1.92245972
+	2:[gender_Male<0.000243296992] yes=5,no=6,missing=5
+		5:leaf=-0.898293674
+		6:leaf=-0.260442108
+booster[6]:
+0:[A1Cresult_None<0.000100640405] yes=1,no=2,missing=1
+	1:[grouped_diag_1_43<0.000646629487] yes=3,no=4,missing=3
+		3:leaf=-0.571214557
+		4:leaf=0.318511784
+	2:[A1Cresult_None<0.999411583] yes=5,no=6,missing=5
+		5:leaf=2.13682079
+		6:leaf=0.00984415039
+booster[7]:
+0:[grouped_diag_3_27<0.999839425] yes=1,no=2,missing=1
+	1:[grouped_diag_3_27<0.000138376359] yes=3,no=4,missing=3
+		3:leaf=-0.0189634338
+		4:leaf=2.10423207
+	2:[grouped_diag_2_59<0.00388788129] yes=5,no=6,missing=5
+		5:leaf=-0.748989463
+		6:leaf=-0.179384455
+booster[8]:
+0:[grouped_diag_1_42<8.88672439e-05] yes=1,no=2,missing=1
+	1:[zstd_num_procedures<-0.810311615] yes=3,no=4,missing=3
+		3:leaf=-0.297523499
+		4:leaf=0.092097491
+	2:[grouped_diag_1_42<0.999976993] yes=5,no=6,missing=5
+		5:leaf=2.02022457
+		6:leaf=-0.393476099
+booster[9]:
+0:[zstd_num_procedures<-0.240593404] yes=1,no=2,missing=1
+	1:[zstd_num_procedures<-0.810311615] yes=3,no=4,missing=3
+		3:leaf=0.0129082622
+		4:leaf=1.91395414
+	2:[zstd_num_procedures<-0.24051854] yes=5,no=6,missing=5
+		5:leaf=-0.563645959
+		6:leaf=-0.060408365
+booster[10]:
+0:[zstd_num_procedures<0.329294413] yes=1,no=2,missing=1
+	1:[zstd_num_procedures<-0.24051854] yes=3,no=4,missing=3
+		3:leaf=0.0563012883
+		4:leaf=1.95546091
+	2:[zstd_num_procedures<0.329298228] yes=5,no=6,missing=5
+		5:leaf=-0.667183399
+		6:leaf=-0.0376116559
+booster[11]:
+0:[age__80_90<0.999970138] yes=1,no=2,missing=1
+	1:[age__80_90<0.000189840124] yes=3,no=4,missing=3
+		3:leaf=0.0364310443
+		4:leaf=1.63965213
+	2:[grouped_diag_2_27<0.000355952856] yes=5,no=6,missing=5
+		5:leaf=-0.442934155
+		6:leaf=0.269072592
+booster[12]:
+0:[zstd_log_number_inpatient<1.99646533] yes=1,no=2,missing=1
+	1:[race_Caucasian<0.999999642] yes=3,no=4,missing=3
+		3:leaf=0.326000512
+		4:leaf=-0.109181128
+	2:[zstd_log_number_inpatient<3.3460741] yes=5,no=6,missing=5
+		5:leaf=2.03380585
+		6:leaf=0.580867946
+booster[13]:
+0:[zstd_number_diagnoses_c<-0.11502216] yes=1,no=2,missing=1
+	1:[zstd_time_in_hospital<-0.776887774] yes=3,no=4,missing=3
+		3:leaf=0.379262358
+		4:leaf=-0.273898214
+	2:[zstd_number_diagnoses_c<0.386370361] yes=5,no=6,missing=5
+		5:leaf=1.88882983
+		6:leaf=0.0434263311
+booster[14]:
+0:[grouped_diag_1_82<0.000704710663] yes=1,no=2,missing=1
+	1:[grouped_diag_2_27<0.999932528] yes=3,no=4,missing=3
+		3:leaf=0.0185199864
+		4:leaf=-0.598272204
+	2:[grouped_diag_1_82<0.999999642] yes=5,no=6,missing=5
+		5:leaf=1.89260983
+		6:leaf=0.165082797
+booster[15]:
+0:[grouped_diag_2_27<0.0001540706] yes=1,no=2,missing=1
+	1:[zstd_num_procedures<0.899053514] yes=3,no=4,missing=3
+		3:leaf=0.0410639644
+		4:leaf=-0.314052254
+	2:[grouped_diag_2_27<0.999932528] yes=5,no=6,missing=5
+		5:leaf=1.86131763
+		6:leaf=-0.0905497298
+booster[16]:
+0:[grouped_diag_1_25<9.35534335e-05] yes=1,no=2,missing=1
+	1:[grouped_diag_3_25<2.00317027e-05] yes=3,no=4,missing=3
+		3:leaf=-0.106496841
+		4:leaf=0.245956764
+	2:[grouped_diag_1_25<0.999927163] yes=5,no=6,missing=5
+		5:leaf=1.88256013
+		6:leaf=-0.139943659
+booster[17]:
+0:[grouped_diag_3_25<0.999970138] yes=1,no=2,missing=1
+	1:[grouped_diag_3_25<2.00317027e-05] yes=3,no=4,missing=3
+		3:leaf=0.0140357772
+		4:leaf=1.8340379
+	2:[insulin_Steady<0.999646902] yes=5,no=6,missing=5
+		5:leaf=-0.402925462
+		6:leaf=-0.689347863
+booster[18]:
+0:[grouped_diag_2_25<6.74502735e-05] yes=1,no=2,missing=1
+	1:[grouped_diag_3_42<3.15587755e-07] yes=3,no=4,missing=3
+		3:leaf=-0.0939100087
+		4:leaf=0.27688998
+	2:[grouped_diag_2_25<0.999906421] yes=5,no=6,missing=5
+		5:leaf=1.87725103
+		6:leaf=-0.126183003
+booster[19]:
+0:[grouped_diag_3_42<0.999902129] yes=1,no=2,missing=1
+	1:[grouped_diag_3_42<3.15587755e-07] yes=3,no=4,missing=3
+		3:leaf=0.0192911532
+		4:leaf=1.67212927
+	2:[zstd_number_diagnoses_c<0.887551785] yes=5,no=6,missing=5
+		5:leaf=-0.290605068
+		6:leaf=-0.595187962
+booster[20]:
+0:[grouped_diag_1_48<0.999845922] yes=1,no=2,missing=1
+	1:[grouped_diag_1_48<2.00317027e-05] yes=3,no=4,missing=3
+		3:leaf=0.0170416869
+		4:leaf=1.63332427
+	2:[zstd_time_in_hospital<0.940165758] yes=5,no=6,missing=5
+		5:leaf=-0.740000904
+		6:leaf=-0.202106953
+booster[21]:
+0:[grouped_diag_1_78<0.999746323] yes=1,no=2,missing=1
+	1:[grouped_diag_1_78<0.000160573458] yes=3,no=4,missing=3
+		3:leaf=-0.0020753236
+		4:leaf=1.72738278
+	2:[grouped_diag_3_17<0.00836921297] yes=5,no=6,missing=5
+		5:leaf=-0.499503374
+		6:leaf=2.49270749
+booster[22]:
+0:[insulin_No<0.999833941] yes=1,no=2,missing=1
+	1:[insulin_No<0.00032136598] yes=3,no=4,missing=3
+		3:leaf=-0.00233320077
+		4:leaf=1.85464299
+	2:[change_No<6.38409711e-06] yes=5,no=6,missing=5
+		5:leaf=-0.411773562
+		6:leaf=-0.0527991094
+booster[23]:
+0:[grouped_diag_3_41<0.999772191] yes=1,no=2,missing=1
+	1:[grouped_diag_3_41<0.000110166438] yes=3,no=4,missing=3
+		3:leaf=0.0070483787
+		4:leaf=1.69990587
+	2:[grouped_diag_1_79<0.0301663801] yes=5,no=6,missing=5
+		5:leaf=-0.500218749
+		6:leaf=1.48444653
+booster[24]:
+0:[zstd_num_lab_procedures_c<-2.10691833] yes=1,no=2,missing=1
+	1:[grouped_diag_2_V4<0.0725937039] yes=3,no=4,missing=3
+		3:leaf=-0.680705905
+		4:leaf=1.28873014
+	2:[grouped_diag_1_49<0.999654055] yes=5,no=6,missing=5
+		5:leaf=0.042042356
+		6:leaf=-0.605512798
