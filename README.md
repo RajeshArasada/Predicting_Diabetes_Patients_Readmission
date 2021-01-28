@@ -124,7 +124,7 @@ The following code is used to select only the first encounter of each patient
 ![Prevalence](/images/train_validation_test_data.png)
 
 ## UpSampling Imbalance Data - SMOTE
-![UpSampling]({/images/SMOTE.png)
+![UpSampling](/images/SMOTE.png)
 
 ## Hyperparameters - Tuned
     :::python3
@@ -140,10 +140,10 @@ The following code is used to select only the first encounter of each patient
 ![Model Performance on validation data](/images/confusion_matrix_50.png)
 
 ## Cumulative Gain Curve
-![Cumulative_Gain_Plot]({/images/cumulative_gain.png)
+![Cumulative_Gain_Plot](/images/cumulative_gain.png)
 
 ## Precision-Recall Trade-Off
-![Precision-Recall curve](/images/img/PR_curve.png)
+![Precision-Recall curve](/images/PR_curve.png)
 
 ## Model performance on test data
 ![Model Performance on test data](/images/confusion_matrix_32_test.png)
