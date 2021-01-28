@@ -8,8 +8,6 @@
 ### What is a Readmission?
 Admission to a hospital within 30 days of a discharge from the same or another hospital. The numbers are disturbing and disappointing. According to the federal government, one in five elderly patients winds up back in the hospital within 30 days of leaving. The cost is troubling, too. The readmission of Medicare patients alone costs $26 billion annually, $17 billion of which is spent on return trips that wouldn’t need to happen if patients received proper care during their first visit.
 
-A hospital readmission is when a patient who is discharged from the hospital gets re-admitted again within a certain period of time. Readmission of patients is a huge financial burden on the insurance companies and other payment agencies. The hospitals also suffer because it reflects poorly on the quality of the service they provide. In 2011, American hospitals spent over $41 billion on diabetic patients who got readmitted within 30 days of discharge. Determining factors that lead to higher readmission, and correspondingly being able to predict which patients will get readmitted can help hospitals save millions of dollars while improving quality of care. 
-
 ```
 Domain      : Machine Learning
 Techniques  : Classification techinque (XGBoost)
@@ -38,16 +36,18 @@ Number of Attributes  : 55
 
 ### Diabetes 130-US hospitals dataset is at the encounter level
 The following code is used to select only the first encounter of each patient
-        :::python3
-        def select_first_encounter(df):
-        '''
-        df: pandas dataframe, dataframe with all encounters
-        return:
-            - first_encounter_df: pandas dataframe, dataframe with only the first encounter for a given patient
-        '''
-        first_encounter = df.sort_values(["encounter_id", "patient_nbr"], ascending=[True, True]). \
-                                groupby("patient_nbr").head(1).reset_index(drop=True)
-        return first_encounter
+        
+       :::python3
+       def select_first_encounter(df):
+       '''
+       df: pandas dataframe, dataframe with all encounters
+       returns:
+           - first_encounter_df: pandas dataframe, dataframe with only the first encounter for a given patient
+       '''
+       first_encounter = df.sort_values(["encounter_id", "patient_nbr"], ascending=[True, True]). \
+                               groupby("patient_nbr").head(1).reset_index(drop=True)
+       return first_encounter
+
 ## Prevalance
        
        :::python3
@@ -84,7 +84,7 @@ The following code is used to select only the first encounter of each patient
 **Standard Scaling**
 * All features will be standardized using the Z-score
 
-![Normalized_Data]({figures}/img/Normalized_data.png)
+![Normalized_Data](/images/Normalized_data.png)
 
 ## Categorical Data
 ### High Cardinality of Diagnostic Codes(ICD-9)
@@ -106,7 +106,7 @@ The following code is used to select only the first encounter of each patient
         dataframe.drop(col, axis=1, inplace=True)
         return dataframe
 
-![Diagnostic_Codes]({figures}/img/Diagnostic_Codes.png)
+![Diagnostic_Codes](/images/Diagnostic_Codes.png)
 
 ## Splitting Data into Train/Validation/Test data
 
@@ -121,10 +121,10 @@ The following code is used to select only the first encounter of each patient
         test = df[df[key].isin(unique_values[sample_size:])].reset_index(drop=True)  # subset test_df
         return train, test
  
-![Prevalence]({figures}/img/train_validation_test.png)
+![Prevalence](/images/train_validation_test.png)
 
 ## UpSampling Imbalance Data - SMOTE
-![UpSampling]({figures}/img/SMOTE.png)
+![UpSampling]({/images/SMOTE.png)
 
 ## Hyperparameters - Tuned
     :::python3
@@ -137,19 +137,19 @@ The following code is used to select only the first encounter of each patient
              'eval_metric': 'auc'}
 
 ## Model performance on validation data
-![Model Performance on validation data]({figures}/img/confusion_matrix_50.png)
+![Model Performance on validation data](/images/confusion_matrix_50.png)
 
 ## Cumulative Gain Curve
-![Cumulative_Gain_Plot]({figures}/img/cumulative_gain.png)
+![Cumulative_Gain_Plot]({/images/cumulative_gain.png)
 
 ## Precision-Recall Trade-Off
-![Precision-Recall curve]({figures}/img/PR_curve.png)
+![Precision-Recall curve](/images/img/PR_curve.png)
 
 ## Model performance on test data
-![Model Performance on test data]({figures}/img/confusion_matrix_30_test.png)
+![Model Performance on test data](/images/confusion_matrix_30_test.png)
 
 # Top Features
-![Best and Worst Features]({figures}/img/PR_curve.png)
+![Best and Worst Features](/images/PR_curve.png)
 
 ## Summary
 * The model built here should be used only to predict readmission of patients of the Caucasian race in the age group of 50-90 years old. Deploying this model on any other race or age group can result is significant errors.
