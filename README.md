@@ -38,30 +38,32 @@ Number of Attributes  : 55
 
 ### Diabetes 130-US hospitals dataset is at the encounter level
 The following code is used to select only the first encounter of each patient
-    :::python3
-    def select_first_encounter(df):
-    '''
-    df: pandas dataframe, dataframe with all encounters
-    return:
-        - first_encounter_df: pandas dataframe, dataframe with only the first encounter for a given patient
-    '''
-    first_encounter = df.sort_values(["encounter_id", "patient_nbr"], ascending=[True, True]). \
-                            groupby("patient_nbr").head(1).reset_index(drop=True)
-    return first_encounter
+        :::python3
+        def select_first_encounter(df):
+        '''
+        df: pandas dataframe, dataframe with all encounters
+        return:
+            - first_encounter_df: pandas dataframe, dataframe with only the first encounter for a given patient
+        '''
+        first_encounter = df.sort_values(["encounter_id", "patient_nbr"], ascending=[True, True]). \
+                                groupby("patient_nbr").head(1).reset_index(drop=True)
+        return first_encounter
 ## Prevalance
-   :::python3
-   def compute_prevelance(df, col):
-        """
-        Count number of occurrences of each value in array.
-        Args:
-            df - DataFrame
-            col - array
-        Returns
-            prevelance
-        """
-        neg, pos = np.bincount(df[col])
-        prevelance = 100 * pos / (neg + pos)
-        return prevelance
+       
+       :::python3
+       def compute_prevelance(df, col):
+            """
+            Count number of occurrences of each value in array.
+            Args:
+                df - DataFrame
+                col - array
+            Returns
+                prevelance
+            """
+            neg, pos = np.bincount(df[col])
+            prevelance = 100 * pos / (neg + pos)
+            return prevelance
+            
 ![Prevelance](/images/Prevelance.png)    
 
 ![Workflow](/images/Workflow.png)
