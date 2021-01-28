@@ -106,7 +106,7 @@ The following code is used to select only the first encounter of each patient
         dataframe.drop(col, axis=1, inplace=True)
         return dataframe
 
-![Diagnostic_Codes](/images/Diagnostic_Codes)
+![Diagnostic_Codes](/images/Diagnostic_Codes.png)
 
 ## Splitting Data into Train/Validation/Test data
 
@@ -121,7 +121,7 @@ The following code is used to select only the first encounter of each patient
         test = df[df[key].isin(unique_values[sample_size:])].reset_index(drop=True)  # subset test_df
         return train, test
  
-![Prevalence](/images/train_validation_test.png)
+![Prevalence](/images/train_validation_test_data.png)
 
 ## UpSampling Imbalance Data - SMOTE
 ![UpSampling]({/images/SMOTE.png)
