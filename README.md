@@ -64,9 +64,9 @@ The following code is used to select only the first encounter of each patient
             prevelance = 100 * pos / (neg + pos)
             return prevelance
             
-![Prevelance](/images/Prevelance.png)    
+![Prevelance](/images/prevelance.png)    
 
-![Workflow](/images/Workflow.png)
+![Workflow](/images/workflow.png)
 
 ## Numeric Data
 ### Normalization Techniques at a Glance
@@ -106,7 +106,7 @@ The following code is used to select only the first encounter of each patient
         dataframe.drop(col, axis=1, inplace=True)
         return dataframe
 
-![Diagnostic_Codes](/images/Diagnostic_Codes.png)
+![Diagnostic_Codes](/images/Diagnostic_Codes)
 
 ## Splitting Data into Train/Validation/Test data
 
