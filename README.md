@@ -146,10 +146,10 @@ The following code is used to select only the first encounter of each patient
 ![Precision-Recall curve](/images/img/PR_curve.png)
 
 ## Model performance on test data
-![Model Performance on test data](/images/confusion_matrix_30_test.png)
+![Model Performance on test data](/images/confusion_matrix_32_test.png)
 
 # Top Features
-![Best and Worst Features](/images/PR_curve.png)
+![Best and Worst Features](/images/features_25.png)
 
 ## Summary
 * The model built here should be used only to predict readmission of patients of the Caucasian race in the age group of 50-90 years old. Deploying this model on any other race or age group can result is significant errors.
