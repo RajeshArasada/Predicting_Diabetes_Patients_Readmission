@@ -137,7 +137,7 @@ The following code is used to select only the first encounter of each patient
              'eval_metric': 'auc'}
 
 ## Model performance on validation data
-![Model Performance on validation data](/images/confusion_matrix_50.png)
+![Model Performance on validation data](/images/confusion_matrix_thresh_50.png)
 
 ## Cumulative Gain Curve
 ![Cumulative_Gain_Plot](/images/cumulative_gain.png)
@@ -146,7 +146,7 @@ The following code is used to select only the first encounter of each patient
 ![Precision-Recall curve](/images/PR_curve.png)
 
 ## Model performance on test data
-![Model Performance on test data](/images/confusion_matrix_32_test.png)
+![Model Performance on test data](/images/confusion_matrix_thresh_32_test.png)
 
 # Top Features
 ![Best and Worst Features](/images/features_25.png)
