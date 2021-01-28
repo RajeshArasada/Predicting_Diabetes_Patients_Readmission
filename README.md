@@ -26,7 +26,7 @@ Number of Attributes  : 55
 ![Data Sample](/images/sample.png)
 
 ## Demographic Information
-![Demograhic_Info]({figures}/img/demographic_info.png)
+![Demograhic_Info](/images/demographic_info.png)
 
 #### Summary-I
 * Caucasian population is the most predominant group in the dataset
@@ -34,7 +34,7 @@ Number of Attributes  : 55
 * Majority of the patients are 40 - 90 years old, 70-80 years age group being the predominant group 
 
 ## EHR Dataset Levels
-![EHR]({figures}/img/EHR_dataset_levels.png)
+![EHR](/images/EHR_dataset_levels.png)
 
 ### Diabetes 130-US hospitals dataset is at the encounter level
 The following code is used to select only the first encounter of each patient
@@ -49,8 +49,8 @@ The following code is used to select only the first encounter of each patient
                             groupby("patient_nbr").head(1).reset_index(drop=True)
     return first_encounter
 ## Prevalance
-     :::python3
-     def compute_prevelance(df, col):
+   :::python3
+   def compute_prevelance(df, col):
         """
         Count number of occurrences of each value in array.
         Args:
@@ -62,9 +62,9 @@ The following code is used to select only the first encounter of each patient
         neg, pos = np.bincount(df[col])
         prevelance = 100 * pos / (neg + pos)
         return prevelance
-![Prevelance]({figures}/img/Prevelance.png)    
+![Prevelance](/images/Prevelance.png)    
 
-![Workflow]({figures}/img/Workflow.png)
+![Workflow](/images/Workflow.png)
 
 ## Numeric Data
 ### Normalization Techniques at a Glance
