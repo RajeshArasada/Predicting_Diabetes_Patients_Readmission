@@ -138,14 +138,17 @@ The following code is used to select only the first encounter of each patient
 
 ## Model performance on validation data
 ![Model Performance on validation data](/images/confusion_matrix_thresh_50.png)
---------------------------------
-Confusion Matrix (threshold=0.5)
---------------------------------
-The confusion matrix is a 2-by-2 matrix laying out correct and incorrect predictions made in each label. 
+-------------------------------------
+#### Confusion Matrix (threshold=0.5)
+-------------------------------------
+The confusion matrix is a 2-by-2 matrix laying out correct and incorrect predictions made in each label.
+
 Patient Class 0 - Patients **NOT readmitted**
+
 There are **(top left and top right quadrants)** 3721 patients in this class. The model correctly predicted the outcome for 3418 patients, i.e; ~92% of them.
 
 Patient Class 1 - Patients **Readmitted**
+
 Of the **(bottom left and bottom right quadrants)** 366 patients in this class the model captured only 45 patients, i.e; ~12.2% of them. 
 
 ## Cumulative Gain Curve
