@@ -44,9 +44,9 @@ The following code is used to select only the first encounter of each patient
        returns:
            - first_encounter_df: pandas dataframe, dataframe with only the first encounter for a given patient
        '''
-       first_encounter = df.sort_values(["encounter_id", "patient_nbr"], ascending=[True, True]). \
+                first_encounter = df.sort_values(["encounter_id", "patient_nbr"], ascending=[True, True]). \
                                groupby("patient_nbr").head(1).reset_index(drop=True)
-       return first_encounter
+                return first_encounter
 
 ## Prevalance
        
@@ -72,17 +72,17 @@ The following code is used to select only the first encounter of each patient
 ### Normalization Techniques at a Glance
 
 **CLIPPING** - caps all feature values above (or below) a certain value
-* 'num_medications'
-* 'num_lab_procedures'
-* 'number_diagnoses'
+        * 'num_medications'
+        * 'num_lab_procedures'
+        * 'number_diagnoses'
 
 **LOG_SCALING** - compress a wide range to a narrow range
-* 'number_inpatient'
-* 'number_outpatient'
-* 'number_emergency'
+        * 'number_inpatient'
+        * 'number_outpatient'
+        * 'number_emergency'
 
 **Standard Scaling**
-* All features will be standardized using the Z-score
+        * All features will be standardized using the Z-score
 
 ![Normalized_Data](/images/Normalized_data.png)
 
@@ -91,20 +91,20 @@ The following code is used to select only the first encounter of each patient
 
         :::python3
         def reduce_diag_dimensionality(dataframe, col):
-        """
-        reduce the dimensionality of the diagnostic codes by grouping them to one level up
-        df - dataframe
-        col - diagnostic code column
-        returns:
-        - grouped col with codes grouped at one level high    
-        """
-        # 1. pad all codes with zeros at the begining with zfill() upto 3
-        dataframe[col] = dataframe[col].str.zfill(3)
-        # 2. extract the first two characters and store them into a different column
-        new_colname = 'grouped_'+ col
-        dataframe[new_colname] = dataframe[col].map(lambda x: x[:2] if type(x) is str else x)
-        dataframe.drop(col, axis=1, inplace=True)
-        return dataframe
+                """
+                reduce the dimensionality of the diagnostic codes by grouping them to one level up
+                df - dataframe
+                col - diagnostic code column
+                returns:
+                - grouped col with codes grouped at one level high    
+                """
+                # 1. pad all codes with zeros at the begining with zfill() upto 3
+                dataframe[col] = dataframe[col].str.zfill(3)
+                # 2. extract the first two characters and store them into a different column
+                new_colname = 'grouped_'+ col
+                dataframe[new_colname] = dataframe[col].map(lambda x: x[:2] if type(x) is str else x)
+                dataframe.drop(col, axis=1, inplace=True)
+                return dataframe
 
 ![Diagnostic_Codes](/images/Diagnostic_Codes.png)
 
@@ -112,14 +112,14 @@ The following code is used to select only the first encounter of each patient
 
         :::python3
         def split_dataset_patient_level(df, key, test_percentage):
-        """ Splits data into Train and Test without data leakage"""
-        df = df.iloc[np.random.permutation(len(df))]                    # random shuffle the data
-        unique_values = df[key].unique()                                # unique patients
-        total_values = len(unique_values)                               # number of unique patients   
-        sample_size = round(total_values * (1-test_percentage))         # sample size
-        train = df[df[key].isin(unique_values[:sample_size])].reset_index(drop=True) #subset train_df
-        test = df[df[key].isin(unique_values[sample_size:])].reset_index(drop=True)  # subset test_df
-        return train, test
+                """ Splits data into Train and Test without data leakage"""
+                df = df.iloc[np.random.permutation(len(df))]                    # random shuffle the data
+                unique_values = df[key].unique()                                # unique patients
+                total_values = len(unique_values)                               # number of unique patients   
+                sample_size = round(total_values * (1-test_percentage))         # sample size
+                train = df[df[key].isin(unique_values[:sample_size])].reset_index(drop=True) #subset train_df
+                test = df[df[key].isin(unique_values[sample_size:])].reset_index(drop=True)  # subset test_df
+                return train, test
  
 ![Prevalence](/images/train_validation_test_data.png)
 
