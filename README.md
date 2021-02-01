@@ -141,26 +141,51 @@ The following code is used to select only the first encounter of each patient
 -------------------------------------
 #### Confusion Matrix (threshold=0.5)
 -------------------------------------
-The confusion matrix is a 2-by-2 matrix laying out correct and incorrect predictions made in each label.
-
-Patient Class 0 - Patients **NOT readmitted**
-
-There are **(top left and top right quadrants)** 3721 patients in this class. The model correctly predicted the outcome for 3418 patients, i.e; ~92% of them.
-
-Patient Class 1 - Patients **Readmitted**
-
-Of the **(bottom left and bottom right quadrants)** 366 patients in this class the model captured only 45 patients, i.e; ~12.2% of them. 
+The confusion matrix above is a 2-by-2 matrix laying out correct and incorrect predictions made in each label.
+Class 0 - Patients **NOT readmitted**
+Of the 3721 patients in this class **(top left and top right quadrants)** the model correctly predicted the outcome for 3418 patients, i.e; ~92% of them.
+Class 1 - Patients **Readmitted**
+Of the 366 patients in this class **(bottom left and bottom right quadrants)**  the model captured only 45 patients, i.e; ~12.2% of them. 
 
 ## Cumulative Gain Curve
-**If the healthcare provider's goal was to reach say 50% of the patients that are most likely to be readmitted then using the cumulative gain curve they can determine that roughly just about 40% of the most likely most likely patients would need to be used to achieve that.**
+The cumulative gains chart shows the percentage of the overall number of cases in the “readmitted” category (label=1) **gained** by targeting a percentage of the total number of cases. For example, the point 0.4 (40%) on the x-axis, if we score a dataset with the model and score all of the observations by predicted probability of readmitted, we would expect the top 40% of the patient population will contain ~52% of the readmitted patients. 
+The diagonal line is the "baseline" curve; if you select 40% of the cases from the scored dataset at random, you would expect to "gain" approximately 40% of all of the cases that actually take the category **readmitted**. **The farther above the baseline a curve lies, the greater the gain**. The cumulative gains chart to help choose a classification cutoff by choosing a percentage that corresponds to a desirable gain, and then mapping that percentage to the appropriate cutoff value.
 ![Cumulative_Gain_Plot](/images/cumulative_gain.png)
 
 
 ## Precision-Recall Trade-Off
+### Computing the cost of mistakes
+As a healthcare provider who aims to improve patient care we want to monitor as many patients as possible to identify the high-risk patients. Our inability to find readmitted patients may generate a a large penalty and monetary burden. So we don't want to miss many high-risk patients --- we'd rather put up with false alarms about potentially readmitted patients instead of missing readmitted patients entirely. In other words, false negatives cost more than false positives.
+We may simply prefer to reduce the percentage of false negatives. Let’s examine two metrics here:
+```
+Recall:
+                [Recall] = [# positive data points with positive predictions] / [# all positive data points]
+                                                        OR
+                         = [# true positives] / [# true positives] + [# false negatives]
+```
+
+```
+Precision: 
+                [Precision] = [# positive data points with positive predictions] / [# all data points with positive predictions]
+                                                        OR
+                         = [# true positives] / [# true positives] + [# false positives]
+```
+
+In the graph below we will explore the trade-off between precision and recall. We will examine what happens when we use a different threshold value for making class predictions. False negatives are costly in our case, so we may want to be more liberal about making positive predictions. To achieve this, instead of thresholding class probabilities at 0.5, we can choose a lower threshold. We then explore a range of 100 different threshold values between 0-0.5 and plot the associated precision-recall curve.
+
+
 ![Precision-Recall curve](/images/PR_curve.png)
 
 ## Model performance on test data
 ![Model Performance on test data](/images/confusion_matrix_thresh_32_test.png)
+-------------------------------------
+#### Confusion Matrix (threshold=0.33)
+-------------------------------------
+The confusion matrix above is a 2-by-2 matrix laying out correct and incorrect predictions made in each label at a threshold value of 0.33.
+Class 0 - Patients **NOT readmitted**
+Of the 12813 patients in this class **(top left and top right quadrants)** the model incorrectly predicted the outcome for 10514 patients, i.e; ~822% of them.
+Class 1 - Patients **Readmitted**
+Of the 1274 readmitted patients (bottom left and bottom right quadrants) in the test dataset the model captured 88% of them i.e;  a66% increase in the number of true positives from ~12.2% identified with the base model.
 
 # Top Features
 ![Best and Worst Features](/images/features_25.png)
